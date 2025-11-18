@@ -23,7 +23,6 @@ public class CanvasScreen: MonoBehaviour
     [Tooltip("Toda tela deve ter uma base de canvas group")]
     public CanvasGroup canvasgroup;
     [SerializeField] protected ScreenData data;
-    public ScreenData screenData;
     public virtual void OnValidate()
     {
         if (canvasgroup == null)
@@ -51,9 +50,13 @@ public class CanvasScreen: MonoBehaviour
 
             foreach (var screen in FindObjectsOfType<CanvasScreen>())
             {
-                if (screen != this && screen.canvasgroup != null)
+                if (screen != this && screen.canvasgroup != null && data.screenName  != screen.data.screenName)
                 {
                     screen.TurnOff();
+                }
+                else if (data.screenName == screen.data.screenName)
+                {
+                    screen.TurnOn();
                 }
             }
 
