@@ -1,8 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Data;
-using Unity.Mathematics;
 using UnityEngine;
 
 
@@ -16,6 +12,8 @@ public class CanvasScreen: MonoBehaviour
         public string screenName;
         public string previusScreenName;
         public string nextScreenName;
+        [Tooltip("Mantem esta tela visivel mesmo quando outro ScreenName e chamado")]
+        public bool keepVisibleOnOtherCalls = false;
         [Header("- editor -")]
         public bool editor_turnOn = false;
         public bool editor_turnOff = false;
@@ -40,7 +38,7 @@ public class CanvasScreen: MonoBehaviour
             }
             else
             {
-                Debug.LogError("CanvasGroup está nulo ao tentar desativar no OnValidate.", this);
+                Debug.LogError("CanvasGroup esta nulo ao tentar desativar no OnValidate.", this);
             }
         }
 
@@ -50,11 +48,25 @@ public class CanvasScreen: MonoBehaviour
 
             foreach (var screen in FindObjectsOfType<CanvasScreen>())
             {
-                if (screen != this && screen.canvasgroup != null && data.screenName  != screen.data.screenName)
+                if (screen == this)
                 {
-                    screen.TurnOff();
+                    continue;
                 }
-                else if (data.screenName == screen.data.screenName)
+
+                if (screen.canvasgroup == null)
+                {
+                    continue;
+                }
+
+                bool isBroadcastCall = ScreenManager.NamesMatch(data.screenName, ScreenManager.BroadcastAllScreensKeyword);
+                if (!isBroadcastCall && !ScreenManager.NamesMatch(data.screenName, screen.data.screenName))
+                {
+                    if (!screen.data.keepVisibleOnOtherCalls)
+                    {
+                        screen.TurnOff();
+                    }
+                }
+                else if (ScreenManager.NamesMatch(data.screenName, screen.data.screenName))
                 {
                     screen.TurnOn();
                 }
@@ -66,7 +78,7 @@ public class CanvasScreen: MonoBehaviour
             }
             else
             {
-                Debug.LogError("CanvasGroup está nulo ao tentar ativar no OnValidate.", this);
+                Debug.LogError("CanvasGroup esta nulo ao tentar ativar no OnValidate.", this);
             }
         }
     }
@@ -88,11 +100,13 @@ public class CanvasScreen: MonoBehaviour
 
     public virtual void CallScreenListner(string screenName)
     {
-        if (screenName == this.data.screenName)
+
+       // Debug.Log($"[CanvasScreen] CallScreenListner recebido: {screenName} para tela {data.screenName}.");
+        if (ScreenManager.NamesMatch(screenName, this.data.screenName))
         {
             TurnOn();
         }
-        else
+        else if (!ScreenManager.NamesMatch(screenName, ScreenManager.BroadcastAllScreensKeyword) && !data.keepVisibleOnOtherCalls)
         {
             TurnOff();
         }

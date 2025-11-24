@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nome da musica/ Nome do Autor
+  m_text: Carregando musica...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -968,11 +968,13 @@ MonoBehaviour:
     screenName: gameplay
     previusScreenName: 
     nextScreenName: feedback
+    keepVisibleOnOtherCalls: 0
     editor_turnOn: 0
     editor_turnOff: 0
   gameplayTime: 60
   timerText: {fileID: 1651825187}
-  progressBarFill: {fileID: 1493834074}
+  progressBarFill: {fileID: 1290829291}
+  emojiImage: {fileID: 1493834074}
   musicAndAutorText: {fileID: 18680902}
 --- !u!225 &258042288
 CanvasGroup:
@@ -982,9 +984,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258042283}
   m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!1 &330585543
 GameObject:
@@ -1670,9 +1672,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434886028}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &434886032
 MonoBehaviour:
@@ -1729,6 +1731,7 @@ MonoBehaviour:
     screenName: vitoria
     previusScreenName: 
     nextScreenName: 
+    keepVisibleOnOtherCalls: 0
     editor_turnOn: 0
     editor_turnOff: 0
 --- !u!1001 &438789555
@@ -1780,8 +1783,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4824266465877737440, guid: 93cabc1a3eb61a44abd3c1579432e642, type: 3}
+      propertyPath: inactiveTimer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824266465877737440, guid: 93cabc1a3eb61a44abd3c1579432e642, type: 3}
       propertyPath: inicialScreen
       value: cta
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824266465877737440, guid: 93cabc1a3eb61a44abd3c1579432e642, type: 3}
+      propertyPath: appConfig.maxInactiveTime
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 5365069297989160950, guid: 93cabc1a3eb61a44abd3c1579432e642, type: 3}
       propertyPath: m_Name
@@ -3041,6 +3052,7 @@ MonoBehaviour:
     screenName: cta
     previusScreenName: 
     nextScreenName: 
+    keepVisibleOnOtherCalls: 0
     editor_turnOn: 0
     editor_turnOff: 0
 --- !u!225 &994427327
@@ -3432,9 +3444,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 508780110}
   - {fileID: 107872553}
   - {fileID: 994788311}
-  - {fileID: 508780110}
   m_Father: {fileID: 378594333}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3497,6 +3509,7 @@ MonoBehaviour:
     screenName: vitoria
     previusScreenName: 
     nextScreenName: fim
+    keepVisibleOnOtherCalls: 0
     editor_turnOn: 0
     editor_turnOff: 0
   audioSource: {fileID: 1097887953}
@@ -3509,9 +3522,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097887947}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!82 &1097887953
 AudioSource:
@@ -3524,7 +3537,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 321d8d3763a090840b3b43e82d6c8f09, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -4536,6 +4549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3f2e8106addfa34db725d8c26d1aa90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  databaseRelativePath: Files/Data/music_database.json
+  catalog: []
 --- !u!1 &1403342083
 GameObject:
   m_ObjectHideFlags: 0
@@ -4770,6 +4785,7 @@ MonoBehaviour:
     screenName: feedback
     previusScreenName: 
     nextScreenName: 
+    keepVisibleOnOtherCalls: 0
     editor_turnOn: 0
     editor_turnOff: 0
 --- !u!225 &1447105586
@@ -5457,7 +5473,8 @@ MonoBehaviour:
   data:
     screenName: gameplay
     previusScreenName: 
-    nextScreenName: 
+    nextScreenName: feedback
+    keepVisibleOnOtherCalls: 0
     editor_turnOn: 0
     editor_turnOff: 0
 --- !u!225 &1618836923
@@ -5468,9 +5485,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618836918}
   m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!1 &1624311839
 GameObject:
@@ -5839,7 +5856,8 @@ MonoBehaviour:
   data:
     screenName: cta
     previusScreenName: 
-    nextScreenName: 
+    nextScreenName: gameplay
+    keepVisibleOnOtherCalls: 0
     editor_turnOn: 0
     editor_turnOff: 0
 --- !u!225 &1661030324
@@ -5949,6 +5967,7 @@ MonoBehaviour:
     screenName: feedback
     previusScreenName: 
     nextScreenName: 
+    keepVisibleOnOtherCalls: 0
     editor_turnOn: 0
     editor_turnOff: 0
   isCorrectFeedback: 0

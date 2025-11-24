@@ -10,9 +10,9 @@ namespace RealGames
     [System.Serializable]
     public class FileLoader
     {
-        // Caminho base padrão definido como Application.streamingAssetsPath para compatibilidade em tempo de execução
+        // Caminho base padrao definido como Application.streamingAssetsPath para compatibilidade em tempo de execucao
         public string path = Path.Combine(Application.streamingAssetsPath, "Files");
-        public string name; // Nome do arquivo com extensão
+        public string name; // Nome do arquivo com extensao
 
         public FileLoader() { }
 
@@ -159,20 +159,83 @@ namespace RealGames
 #else
             string url = "file:///" + filePath;
 #endif
-            // Use UnityWebRequest for all platforms for consistency
-            UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.UNKNOWN);
+            AudioType audioType = ResolveAudioType(name);
+
+            UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(url, audioType);
+            if (www.downloadHandler is DownloadHandlerAudioClip audioHandler)
+            {
+                audioHandler.streamAudio = false;
+#if UNITY_2018_1_OR_NEWER
+                audioHandler.compressed = false;
+#endif
+            }
             www.SendWebRequest().completed += _ =>
             {
+                AudioClip clip = null;
+                string errorMessage = null;
+
                 if (www.result == UnityWebRequest.Result.Success)
                 {
-                    AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
-                    onComplete?.Invoke(clip);
+                    clip = DownloadHandlerAudioClip.GetContent(www);
+                    if (clip != null)
+                    {
+                        clip.name = Path.GetFileNameWithoutExtension(name);
+                    }
+                    else
+                    {
+                        errorMessage = "UnityWebRequest returned null clip.";
+                    }
                 }
                 else
                 {
-                    Debug.LogError($"Failed to load audio: {name}, Error: {www.error}");
-                    onComplete?.Invoke(null);
+                    errorMessage = www.error;
                 }
+
+                if (clip == null && audioType == AudioType.UNKNOWN)
+                {
+                    // Retry with explicit MPEG as fallback for MP3-like files.
+                    string retryUrl = url;
+                    UnityWebRequest retryRequest = UnityWebRequestMultimedia.GetAudioClip(retryUrl, AudioType.MPEG);
+                    retryRequest.SendWebRequest().completed += __ =>
+                    {
+                        AudioClip retryClip = null;
+                        if (retryRequest.result == UnityWebRequest.Result.Success)
+                        {
+                            retryClip = DownloadHandlerAudioClip.GetContent(retryRequest);
+                            if (retryClip != null)
+                            {
+                                retryClip.name = Path.GetFileNameWithoutExtension(name);
+                                onComplete?.Invoke(retryClip);
+                            }
+                            else
+                            {
+                                Debug.LogError($"Failed to load audio on retry: {name}, clip remains null.");
+                                onComplete?.Invoke(null);
+                            }
+                        }
+                        else
+                        {
+                            Debug.LogError($"Failed to load audio on retry: {name}, Error: {retryRequest.error}");
+                            onComplete?.Invoke(null);
+                        }
+
+                        retryRequest.Dispose();
+                    };
+                }
+                else
+                {
+                    if (clip != null)
+                    {
+                        onComplete?.Invoke(clip);
+                    }
+                    else
+                    {
+                        Debug.LogError($"Failed to load audio: {name}, Error: {errorMessage}");
+                        onComplete?.Invoke(null);
+                    }
+                }
+
+                www.Dispose();
             };
         }
 
@@ -188,6 +251,30 @@ namespace RealGames
 #endif
             videoPlayer.Prepare();
             videoPlayer.prepareCompleted += _ => onComplete?.Invoke();
+        }
+
+        private static AudioType ResolveAudioType(string fileName)
+        {
+            if (string.IsNullOrEmpty(fileName))
+            {
+                return AudioType.UNKNOWN;
+            }
+
+            string extension = Path.GetExtension(fileName)?.ToLowerInvariant();
+            switch (extension)
+            {
+                case ".wav":
+                    return AudioType.WAV;
+                case ".mp3":
+                    return AudioType.MPEG;
+                case ".ogg":
+                    return AudioType.OGGVORBIS;
+                case ".aif":
+                case ".aiff":
+                    return AudioType.AIFF;
+                default:
+                    return AudioType.UNKNOWN;
+            }
         }
     }
 }

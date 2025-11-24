@@ -1,0 +1,18 @@
+{
+  "musicas": [
+    {
+      "musica": "Emoji Hits Theme",
+      "autor": "Real Games Studio",
+      "letra": "Quando o show comecar, todos vao cantar.\nComplete aqui com a letra oficial da musica.",
+      "arquivoImagemEmoji": "Emojis/emoji_smile.png",
+      "arquivoMusica": "emoji_hits_theme.mp3"
+    },
+    {
+      "musica": "Danca das Carinhas",
+      "autor": "DJ Emoji",
+      "letra": "Essa e uma letra de exemplo para a segunda faixa.\nSubstitua pelo texto definitivo quando estiver pronto.",
+      "arquivoImagemEmoji": "Emojis/emoji_party.png",
+      "arquivoMusica": "danca_das_carinhas.mp3"
+    }
+  ]
+}
