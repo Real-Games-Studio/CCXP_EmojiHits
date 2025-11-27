@@ -22,6 +22,14 @@ public class ScreenCanvasController : MonoBehaviour
         // Registra o m�todo CallScreenListner como ouvinte do evento CallScreen
         ScreenManager.CallScreen += OnScreenCall;
 
+        // LIGAR TODOS OS DISPLAYS
+        if (Display.displays.Length > 1)
+        {
+            for (int i = 1; i < Display.displays.Length; i++)
+            {
+                Display.displays[i].Activate();
+            }
+        }
     }
     private void OnDisable()
     {
