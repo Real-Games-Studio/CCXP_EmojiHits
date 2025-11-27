@@ -13,7 +13,9 @@ public class CanvasScreenGameplay : CanvasScreen
 
     [SerializeField] private Image emojiImage;
     [SerializeField] private TMP_Text musicAndAutorText; // Nome da Musica\ Autor
+    [SerializeField] private TMP_Text musicAndAutorText2; // Nome da Musica\ Autor
     [SerializeField] private TMP_Text musicAndAutorTextOnFeedbackScreen; // Nome da Musica\ Autor
+    [SerializeField] private TMP_Text musicTrecho;
 
 
     public override void OnEnable()
@@ -162,7 +164,11 @@ public class CanvasScreenGameplay : CanvasScreen
                 musicAndAutorText.text = music.musicName;
                 Debug.Log($"[CanvasScreenGameplay] Texto atualizado: {music.musicName}");
             }
+
+            musicAndAutorText2.text = musicAndAutorText.text;
             musicAndAutorTextOnFeedbackScreen.text = musicAndAutorText.text;
+
+            musicTrecho.SetText(music.musicLyric);
         }
     }
 

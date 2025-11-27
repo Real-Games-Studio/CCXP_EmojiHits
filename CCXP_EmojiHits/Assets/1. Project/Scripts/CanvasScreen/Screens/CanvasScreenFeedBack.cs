@@ -1,3 +1,4 @@
+using System.Collections;
 using System;
 using TMPro;
 using UnityEngine;
@@ -11,29 +12,31 @@ public class CanvasScreenFeedBack : CanvasScreen
     [SerializeField] private TMP_Text feedbackText;
     [SerializeField] private TMP_Text feedbackTextOnStaffScreen;
 
-    [SerializeField] public TMP_Text musicName; // deve carregar o nome da musica atual Musica - Autor
     [SerializeField] private AudioSource audioSource; // deve carregar a musica atual e tocar ela
 
     private MusicController.MusicData currentMusicData;
+    private Coroutine controllerWatcher;
+    private bool isMusicSubscriptionActive;
 
 
     public override void OnEnable()
     {
-        if (MusicController.Instance != null)
-        {
-            MusicController.Instance.OnMusicChanged += HandleMusicChanged;
-        }
         base.OnEnable();
         MusicControllerEvents.OnUserAwnser += HandleUserAnswer;
+        controllerWatcher = StartCoroutine(WatchForMusicController());
     }
     public override void OnDisable()
     {
-        if (MusicController.Instance != null)
-        {
-            MusicController.Instance.OnMusicChanged -= HandleMusicChanged;
-        }
         base.OnDisable();
         MusicControllerEvents.OnUserAwnser -= HandleUserAnswer;
+        if (controllerWatcher != null)
+        {
+            StopCoroutine(controllerWatcher);
+            controllerWatcher = null;
+        }
+
+        MusicController.Instance.OnMusicChanged -= HandleMusicChanged;
+        isMusicSubscriptionActive = false;
         StopFeedbackMusic();
     }
     public override void TurnOn()
@@ -45,12 +48,6 @@ public class CanvasScreenFeedBack : CanvasScreen
     {
         StopFeedbackMusic();
         base.TurnOff();
-    }
-
-    private void HandleMusicChanged(MusicController.MusicData music)
-    {
-        currentMusicData = music;
-        musicName.text = music != null ? music.musicName + " - " + music.musicAutor : "Letra indisponível.";
     }
 
     private void HandleUserAnswer(string value)
@@ -91,14 +88,16 @@ public class CanvasScreenFeedBack : CanvasScreen
     }
     private void PlayFeedbackMusic()
     {
-        if (audioSource == null || currentMusicData?.musicClip == null)
+        if (currentMusicData == null)
         {
+            Debug.LogWarning("[CanvasScreenFeedBack] Nenhuma musica atual definida para tocar o feedback.");
             return;
         }
 
-        if (audioSource.isPlaying)
+        if (currentMusicData.musicClip == null)
         {
-            audioSource.Stop();
+            Debug.LogWarning("[CanvasScreenFeedBack] Clip de audio nao carregado para a musica atual.");
+            return;
         }
 
         audioSource.clip = currentMusicData.musicClip;
@@ -129,6 +128,28 @@ public class CanvasScreenFeedBack : CanvasScreen
 
         feedbackText.text = isCorrectFeedback ? "Resposta Correta!" : "Resposta Incorreta!";
         feedbackTextOnStaffScreen.text = feedbackText.text;
+    }
+
+    private void HandleMusicChanged(MusicController.MusicData music)
+    {
+        Debug.Log($"[CanvasScreenFeedBack] Musica atual alterada recebida: {music?.musicName ?? "null"}.");
+        currentMusicData = music;
+    }
+
+    private IEnumerator WatchForMusicController()
+    {
+        while (MusicController.Instance == null)
+        {
+            yield return null;
+        }
+
+        MusicController.Instance.OnMusicChanged += HandleMusicChanged;
+        isMusicSubscriptionActive = true;
+
+        if (MusicController.Instance.TryGetCurrentMusic(out var music))
+        {
+            currentMusicData = music;
+        }
     }
 
 }
