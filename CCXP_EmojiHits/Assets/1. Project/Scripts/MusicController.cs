@@ -61,11 +61,13 @@ public class MusicController : MonoBehaviour
     public MusicData CurrentMusic => currentMusic;
 
     public event Action<MusicData> OnMusicChanged;
+    public event Action OnDatabaseLoaded;
 
     private MusicData currentMusic;
     private int currentIndex = -1;
     private bool isDatabaseLoaded;
     private Coroutine databaseCoroutine;
+    private int lastRandomIndex = -1;
 
     private void Awake()
     {
@@ -131,7 +133,19 @@ public class MusicController : MonoBehaviour
             return null;
         }
 
-        int randomIndex = UnityEngine.Random.Range(0, catalog.Count);
+        if (catalog.Count == 1)
+        {
+            return catalog[0];
+        }
+
+        int randomIndex;
+        do
+        {
+            randomIndex = UnityEngine.Random.Range(0, catalog.Count);
+        }
+        while (randomIndex == lastRandomIndex);
+
+        lastRandomIndex = randomIndex;
         Debug.Log($"[MusicController] Musica aleatoria selecionada: {catalog[randomIndex].musicName}.");
         return catalog[randomIndex];
     }
@@ -234,8 +248,11 @@ public class MusicController : MonoBehaviour
             catalog.Add(data);
         }
 
+
+
         isDatabaseLoaded = true;
         databaseCoroutine = null;
+        OnDatabaseLoaded?.Invoke();
 
         if (catalog.Count == 0)
         {

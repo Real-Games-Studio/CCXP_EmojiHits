@@ -1,20 +1,6 @@
 {
   "musicas": [
     {
-      "musica": "Emoji Hits Theme",
-      "autor": "Real Games Studio",
-      "letra": "Quando o show comecar, todos vao cantar.\nComplete aqui com a letra oficial da musica.",
-      "arquivoImagemEmoji": "Emojis/emoji_smile.png",
-      "arquivoMusica": "emoji_hits_theme.mp3"
-    },
-    {
-      "musica": "Danca das Carinhas",
-      "autor": "DJ Emoji",
-      "letra": "Essa e uma letra de exemplo para a segunda faixa.\nSubstitua pelo texto definitivo quando estiver pronto.",
-      "arquivoImagemEmoji": "Emojis/emoji_party.png",
-      "arquivoMusica": "danca_das_carinhas.mp3"
-    },
-    {
       "musica": "EU VOU NA SUA CASA",
       "autor": "FELIPE AMORIM",
       "letra": "EU VOU NA SUA CASA, BATO NA SUA PORTA",
@@ -279,6 +265,132 @@
       "letra": "\"Mas João de Santo Cristo…\"",
       "arquivoImagemEmoji": "Emojis/faroestecaboclo.png",
       "arquivoMusica": "faroestecaboclo.mp3"
+    },
+    {
+      "musica": "EU VOU NA SUA CASA",
+      "autor": "FELIPE AMORIM",
+      "letra": "EU VOU NA SUA CASA, BATO NA SUA PORTA",
+      "arquivoImagemEmoji": "Emojis/﻿euvounasuacasa.png",
+      "arquivoMusica": "﻿euvounasuacasa.mp3"
+    },
+    {
+      "musica": "Bad Guy",
+      "autor": "Billie Eilish",
+      "letra": "\"I’m the bad guy… duh!\"",
+      "arquivoImagemEmoji": "Emojis/badguy.png",
+      "arquivoMusica": "badguy.mp3"
+    },
+    {
+      "musica": "Peaches",
+      "autor": "Justin Bieber",
+      "letra": "\"I got my peaches out in Georgia…\"",
+      "arquivoImagemEmoji": "Emojis/peaches.png",
+      "arquivoMusica": "peaches.mp3"
+    },
+    {
+      "musica": "Viva La Vida",
+      "autor": "Coldplay",
+      "letra": "I used to rule the world…",
+      "arquivoImagemEmoji": "Emojis/vivalavida.png",
+      "arquivoMusica": "vivalavida.mp3"
+    },
+    {
+      "musica": "Billie Jean",
+      "autor": "Michael Jackson",
+      "letra": "\"Billie Jean is not my lover… the kid is not my son.\"",
+      "arquivoImagemEmoji": "Emojis/billiejean.png",
+      "arquivoMusica": "billiejean.mp3"
+    },
+    {
+      "musica": "Thriller",
+      "autor": "Michael Jackson",
+      "letra": "\"’Cause this is thriller, thriller night!\"",
+      "arquivoImagemEmoji": "Emojis/thriller.png",
+      "arquivoMusica": "thriller.mp3"
+    },
+    {
+      "musica": "Toxic",
+      "autor": "Britney Spears",
+      "letra": "With a taste of your lips I’m on a ride…",
+      "arquivoImagemEmoji": "Emojis/toxic.png",
+      "arquivoMusica": "toxic.mp3"
+    },
+    {
+      "musica": "Baby One More Time",
+      "autor": "Britney Spears",
+      "letra": "\"Hit me baby one more time!\"",
+      "arquivoImagemEmoji": "Emojis/babyonemoretime.png",
+      "arquivoMusica": "babyonemoretime.mp3"
+    },
+    {
+      "musica": "Umbrella",
+      "autor": "Rihanna",
+      "letra": "\"You can stand under my umbrella… ella, ella, eh eh eh…\"",
+      "arquivoImagemEmoji": "Emojis/umbrella.png",
+      "arquivoMusica": "umbrella.mp3"
+    },
+    {
+      "musica": "Diamonds",
+      "autor": "Rihanna",
+      "letra": "\"Shine bright like a diamond…\"",
+      "arquivoImagemEmoji": "Emojis/diamonds.png",
+      "arquivoMusica": "diamonds.mp3"
+    },
+    {
+      "musica": "Blank Space",
+      "autor": "Taylor Swift",
+      "letra": "\"Got a long list of ex-lovers…\"",
+      "arquivoImagemEmoji": "Emojis/blankspace.png",
+      "arquivoMusica": "blankspace.mp3"
+    },
+    {
+      "musica": "Bad Romance",
+      "autor": "Lady Gaga",
+      "letra": "\"Rah-rah-ah-ah-ah…\"",
+      "arquivoImagemEmoji": "Emojis/badromance.png",
+      "arquivoMusica": "badromance.mp3"
+    },
+    {
+      "musica": "Poker Face",
+      "autor": "Lady Gaga",
+      "letra": "\"Can’t read my poker face…\"",
+      "arquivoImagemEmoji": "Emojis/pokerface.png",
+      "arquivoMusica": "pokerface.mp3"
+    },
+    {
+      "musica": "Roar",
+      "autor": "Katy Perry",
+      "letra": "\"I got the eye of the tiger!\"",
+      "arquivoImagemEmoji": "Emojis/roar.png",
+      "arquivoMusica": "roar.mp3"
+    },
+    {
+      "musica": "Flowers",
+      "autor": "Miley Cyrus",
+      "letra": "I can buy myself flowers…\"",
+      "arquivoImagemEmoji": "Emojis/flowers.png",
+      "arquivoMusica": "flowers.mp3"
+    },
+    {
+      "musica": "Radioactive",
+      "autor": "Imagine Dragons",
+      "letra": "\"I’m radioactive, radioactive…\"",
+      "arquivoImagemEmoji": "Emojis/radioactive.png",
+      "arquivoMusica": "radioactive.mp3"
+    },
+    {
+      "musica": "Stayin’ Alive",
+      "autor": "Bee Gees",
+      "letra": "Ah, ha, ha, ha, stayin' alive",
+      "arquivoImagemEmoji": "Emojis/stayinalive.png",
+      "arquivoMusica": "stayinalive.mp3"
+    },
+    {
+      "musica": "Purple Rain",
+      "autor": "Prince",
+      "letra": "Purple rain, purple rain",
+      "arquivoImagemEmoji": "Emojis/purplerain.png",
+      "arquivoMusica": "purplerain.mp3"
     }
   ]
 }
