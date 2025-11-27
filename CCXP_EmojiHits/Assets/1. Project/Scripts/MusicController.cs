@@ -8,7 +8,7 @@ using UnityEngine.Networking;
 
 public static class MusicControllerEvents
 {
-    public static Action<bool> OnUserAwnser;
+    public static Action<String> OnUserAwnser; // acertou, errou, acabou
 }
 
 public class MusicController : MonoBehaviour
@@ -136,7 +136,7 @@ public class MusicController : MonoBehaviour
         return catalog[randomIndex];
     }
 
-    private void HandleUserAnswer(bool _)
+    private void HandleUserAnswer(string _)
     {
         // Hook reservado para logica futura de pontuacao ou feedback.
     }

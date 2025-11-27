@@ -13,6 +13,8 @@ public class CanvasScreenGameplay : CanvasScreen
 
     [SerializeField] private Image emojiImage;
     [SerializeField] private TMP_Text musicAndAutorText; // Nome da Musica\ Autor
+    [SerializeField] private TMP_Text musicAndAutorTextOnFeedbackScreen; // Nome da Musica\ Autor
+
 
     public override void OnEnable()
     {
@@ -125,7 +127,8 @@ public class CanvasScreenGameplay : CanvasScreen
 
     private void HandleTimeout()
     {
-        MusicControllerEvents.OnUserAwnser?.Invoke(false);
+        MusicControllerEvents.OnUserAwnser?.Invoke("acabou");
+
         CallNextScreen();
     }
 
@@ -159,6 +162,7 @@ public class CanvasScreenGameplay : CanvasScreen
                 musicAndAutorText.text = music.musicName;
                 Debug.Log($"[CanvasScreenGameplay] Texto atualizado: {music.musicName}");
             }
+            musicAndAutorTextOnFeedbackScreen.text = musicAndAutorText.text;
         }
     }
 
@@ -180,16 +184,18 @@ public class CanvasScreenGameplay : CanvasScreen
     // Chamada para declarar resposta correta
     public void Button_ClickCorrect()
     {
+        Debug.Log("[CanvasScreenGameplay] Botao de resposta correta clicado.");
         StopCountdown();
-        MusicControllerEvents.OnUserAwnser?.Invoke(true);
+        MusicControllerEvents.OnUserAwnser?.Invoke("acertou");
         CallNextScreen();
     }
 
     // Chamada para declarar resposta errada
     public void Button_ClickWrong()
     {
+        Debug.Log("[CanvasScreenGameplay] Botao de resposta errada clicado.");
         StopCountdown();
-        MusicControllerEvents.OnUserAwnser?.Invoke(false);
+        MusicControllerEvents.OnUserAwnser?.Invoke("errou");
         CallNextScreen();
     }
 }
