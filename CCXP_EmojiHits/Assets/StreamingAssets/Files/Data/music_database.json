@@ -13,6 +13,272 @@
       "letra": "Essa e uma letra de exemplo para a segunda faixa.\nSubstitua pelo texto definitivo quando estiver pronto.",
       "arquivoImagemEmoji": "Emojis/emoji_party.png",
       "arquivoMusica": "danca_das_carinhas.mp3"
+    },
+    {
+      "musica": "EU VOU NA SUA CASA",
+      "autor": "FELIPE AMORIM",
+      "letra": "EU VOU NA SUA CASA, BATO NA SUA PORTA",
+      "arquivoImagemEmoji": "Emojis/euvounasuacasa.png",
+      "arquivoMusica": "euvounasuacasa.mp3"
+    },
+    {
+      "musica": "SUA BOCA MENTE",
+      "autor": "ZÉ FELIPE E ANA CASTELA",
+      "letra": "EU SÓ SEI AMAR TU, EU SÓ SEI QUERER TU",
+      "arquivoImagemEmoji": "Emojis/suabocamente.png",
+      "arquivoMusica": "suabocamente.mp3"
+    },
+    {
+      "musica": "COMPRA BOBBIE GOODS",
+      "autor": "ENALDINHO E MC BRINGEL",
+      "letra": "OHH MÃEEE, COMPRA BOBBIE GOODS",
+      "arquivoImagemEmoji": "Emojis/comprabobbiegoods.png",
+      "arquivoMusica": "comprabobbiegoods.mp3"
+    },
+    {
+      "musica": "MELZINHO",
+      "autor": "XAND AVIÃO E TALITA MEL",
+      "letra": "ZUM ZUM ZUM EU TO VOANDO",
+      "arquivoImagemEmoji": "Emojis/melzinho.png",
+      "arquivoMusica": "melzinho.mp3"
+    },
+    {
+      "musica": "DAME UN GRR",
+      "autor": "FANTONEL, BATE LINN",
+      "letra": "DAME UN GRR",
+      "arquivoImagemEmoji": "Emojis/dameungrr.png",
+      "arquivoMusica": "dameungrr.mp3"
+    },
+    {
+      "musica": "CARTÃO BLACK",
+      "autor": "MC CAVEIRINHA, KAYBLACK",
+      "letra": "RESGATEI MEU CARTÃO BLACK, LIGUEI O KAYBLACK, QUE ATÉ A ATENDENTE SORRIU",
+      "arquivoImagemEmoji": "Emojis/cartaoblack.png",
+      "arquivoMusica": "cartaoblack.mp3"
+    },
+    {
+      "musica": "DOMINAR O MUNDO",
+      "autor": "TURMA DA BATATINHA",
+      "letra": "NÓS IREMOS DOMINAR O MUNDO (TODO MUNDO)",
+      "arquivoImagemEmoji": "Emojis/dominaromundo.png",
+      "arquivoMusica": "dominaromundo.mp3"
+    },
+    {
+      "musica": "MENINA DE VERMELHO",
+      "autor": "MC MENOR JP",
+      "letra": "QUEM É ESSA MENINA DE VERMELHO",
+      "arquivoImagemEmoji": "Emojis/meninadevermelho.png",
+      "arquivoMusica": "meninadevermelho.mp3"
+    },
+    {
+      "musica": "MENINA DA BOTA",
+      "autor": "BELINHA DO FORRÓ",
+      "letra": "MENINA DA BOTA",
+      "arquivoImagemEmoji": "Emojis/meninadabota.png",
+      "arquivoMusica": "meninadabota.mp3"
+    },
+    {
+      "musica": "PEQUENO GUARANÁ",
+      "autor": "SAJA BOYS",
+      "letra": "MEU PEQUENO GUARNÁ",
+      "arquivoImagemEmoji": "Emojis/pequenoguarana.png",
+      "arquivoMusica": "pequenoguarana.mp3"
+    },
+    {
+      "musica": "TIVE UMA IDÉIA",
+      "autor": "LEOZINN 077",
+      "letra": "TIVE UMA IDEIA. E EU VOU TE MOSTRAR. COMO TER FORÇA PRA SONHAR.",
+      "arquivoImagemEmoji": "Emojis/tiveumaideia.png",
+      "arquivoMusica": "tiveumaideia.mp3"
+    },
+    {
+      "musica": "PALMA DA BANANA",
+      "autor": "REI DO DANONE",
+      "letra": "É 1 REAL, A PALMA DA BANANA",
+      "arquivoImagemEmoji": "Emojis/palmada banana.png",
+      "arquivoMusica": "palmada banana.mp3"
+    },
+    {
+      "musica": "CANUDINHO",
+      "autor": "JALDO RODRIGUES, HENRIQUE & DIEGO",
+      "letra": "POR VOCÊ EU BEBO O MAR DE CANUDINHO",
+      "arquivoImagemEmoji": "Emojis/canudinho.png",
+      "arquivoMusica": "canudinho.mp3"
+    },
+    {
+      "musica": "ONDA ONDA OLHA A ONDA",
+      "autor": "TCHAKABUM",
+      "letra": "OLHA A ONDA, OLHA A ONDA",
+      "arquivoImagemEmoji": "Emojis/ondaondaolhaaonda.png",
+      "arquivoMusica": "ondaondaolhaaonda.mp3"
+    },
+    {
+      "musica": "FOGO E PAIXÃO",
+      "autor": "WANDO",
+      "letra": "VOCÊ É LUZ. É RAIO, ESTRELA E LUAR",
+      "arquivoImagemEmoji": "Emojis/fogoepaixao.png",
+      "arquivoMusica": "fogoepaixao.mp3"
+    },
+    {
+      "musica": "DORMI NA PRAÇA",
+      "autor": "BRUNO E MARRONE",
+      "letra": "EU DORMI NA PRAÇA PENSANDO NELA",
+      "arquivoImagemEmoji": "Emojis/dorminapraca.png",
+      "arquivoMusica": "dorminapraca.mp3"
+    },
+    {
+      "musica": "LEPO LEPO",
+      "autor": "PSIRICO",
+      "letra": "EU NÃO TENHO CARRO, NÃO TENHO TETO.",
+      "arquivoImagemEmoji": "Emojis/lepolepo.png",
+      "arquivoMusica": "lepolepo.mp3"
+    },
+    {
+      "musica": "CHORAM AS ROSAS",
+      "autor": "BRUNO E MARRONE",
+      "letra": "CHORAM AS ROSAS",
+      "arquivoImagemEmoji": "Emojis/choramasrosas.png",
+      "arquivoMusica": "choramasrosas.mp3"
+    },
+    {
+      "musica": "PASSARO DE FOGO",
+      "autor": "PAULA FERNANDES",
+      "letra": "SOU PASSARO DE FOGO",
+      "arquivoImagemEmoji": "Emojis/passarodefogo.png",
+      "arquivoMusica": "passarodefogo.mp3"
+    },
+    {
+      "musica": "MENINA VENENO",
+      "autor": "RITCHIE",
+      "letra": "MENINA VENENO O MUNDO É PEQUENO DEMAIS PRA NÓS DOIS",
+      "arquivoImagemEmoji": "Emojis/meninaveneno.png",
+      "arquivoMusica": "meninaveneno.mp3"
+    },
+    {
+      "musica": "PORQUE HOMEM NÃO CHORA",
+      "autor": "PABLO",
+      "letra": "PORQUE HOMEM NÃO CHORA",
+      "arquivoImagemEmoji": "Emojis/porquehomemnaochora.png",
+      "arquivoMusica": "porquehomemnaochora.mp3"
+    },
+    {
+      "musica": "AQUARELA",
+      "autor": "TOQUINHO",
+      "letra": "NUMA FOLHA QUALQUER. EU DESENHO UM SOL AMARELO",
+      "arquivoImagemEmoji": "Emojis/aquarela.png",
+      "arquivoMusica": "aquarela.mp3"
+    },
+    {
+      "musica": "MEU VIOLÃO E O NOSSO CACHORRO",
+      "autor": "SIMONE E SIMARIA",
+      "letra": "MAS DESSA CASA, EU SÓ VOU LEVAR, MEU VIOLÃO E O NOSSO CACHORRO",
+      "arquivoImagemEmoji": "Emojis/meuviolaoeonossocachorro.png",
+      "arquivoMusica": "meuviolaoeonossocachorro.mp3"
+    },
+    {
+      "musica": "METEORO",
+      "autor": "LUAN SANTANA",
+      "letra": "METEORO DA PAIXÃO",
+      "arquivoImagemEmoji": "Emojis/meteoro.png",
+      "arquivoMusica": "meteoro.mp3"
+    },
+    {
+      "musica": "CÉU AZUL",
+      "autor": "CHARLIE BROWN JR.",
+      "letra": "TÃO NATURAL QUANTO A LUZ DO DIA",
+      "arquivoImagemEmoji": "Emojis/ceuazul.png",
+      "arquivoMusica": "ceuazul.mp3"
+    },
+    {
+      "musica": "VAGALUMES",
+      "autor": "POLLO",
+      "letra": "VOU CAÇAR MAIS DE UM MILHÃO DE VAGALUMES POR AÍ",
+      "arquivoImagemEmoji": "Emojis/vagalumes.png",
+      "arquivoMusica": "vagalumes.mp3"
+    },
+    {
+      "musica": "DOMINGO DE MANHÃ",
+      "autor": "MARCOS E BELUTTI",
+      "letra": "EU PREFIRO OUVIR SUA VOZ DE SONO. DOMINGO DE MANHÃ",
+      "arquivoImagemEmoji": "Emojis/domingodemanha.png",
+      "arquivoMusica": "domingodemanha.mp3"
+    },
+    {
+      "musica": "TÁ TRANQUILO TÁ FAVORÁVEL",
+      "autor": "MC BIN LADEN",
+      "letra": "TÁ TRANQUILO TÁ FAVORÁVEL",
+      "arquivoImagemEmoji": "Emojis/tatranquilotafavoravel.png",
+      "arquivoMusica": "tatranquilotafavoravel.mp3"
+    },
+    {
+      "musica": "24 HORAS POR DIA",
+      "autor": "LUDMILLA",
+      "letra": "FALA DE MIM, PENSA EM MIM, 24 HORAS POR DIA",
+      "arquivoImagemEmoji": "Emojis/24horasporttadia.png",
+      "arquivoMusica": "24horasporttadia.mp3"
+    },
+    {
+      "musica": "SONHEI QUE TAVA ME CASANDO",
+      "autor": "WESLEY SAFADÃO",
+      "letra": "SONHEI QUE TAVA ME CASANDO",
+      "arquivoImagemEmoji": "Emojis/sonheiquetavamecasando.png",
+      "arquivoMusica": "sonheiquetavamecasando.mp3"
+    },
+    {
+      "musica": "LOKA",
+      "autor": "SIMONE & SIMARIA",
+      "letra": "PÕE AQUELA ROUPA E O BATOM. ENTRA NO CARRO, AMIGA, AUMENTA O SOM",
+      "arquivoImagemEmoji": "Emojis/loka.png",
+      "arquivoMusica": "loka.mp3"
+    },
+    {
+      "musica": "BEBI MINHA BICICLETA",
+      "autor": "ZÉ NETO & CRISTIANO",
+      "letra": "EU BEBI MINHA BICICLETA, BEBI MINHA TV",
+      "arquivoImagemEmoji": "Emojis/bebiminhabicicleta.png",
+      "arquivoMusica": "bebiminhabicicleta.mp3"
+    },
+    {
+      "musica": "UM PEDIDO",
+      "autor": "HUNGRIA",
+      "letra": "UM DIA EU VI UMA ESTRELA CADENTE E FIZ UM PEDIDO",
+      "arquivoImagemEmoji": "Emojis/umpedido.png",
+      "arquivoMusica": "umpedido.mp3"
+    },
+    {
+      "musica": "SUÍTE 14",
+      "autor": "HENRIQUE E DIEGO, MC GUIMÊ",
+      "letra": "SUÍTE 14, BANHEIRA DE ESPUMA",
+      "arquivoImagemEmoji": "Emojis/suite14.png",
+      "arquivoMusica": "suite14.mp3"
+    },
+    {
+      "musica": "Lanterna dos Afogados",
+      "autor": "Paralamas",
+      "letra": "\"Se não quiser ficar sozinho…\"",
+      "arquivoImagemEmoji": "Emojis/lanternadosafogados.png",
+      "arquivoMusica": "lanternadosafogados.mp3"
+    },
+    {
+      "musica": "Que País É Esse",
+      "autor": "Legião Urbana",
+      "letra": "\"Que país é esse?\"",
+      "arquivoImagemEmoji": "Emojis/quepaiseesse.png",
+      "arquivoMusica": "quepaiseesse.mp3"
+    },
+    {
+      "musica": "Velha Infância",
+      "autor": "Tribalistas",
+      "letra": "\"Eu gosto de você…\"",
+      "arquivoImagemEmoji": "Emojis/velhainfancia.png",
+      "arquivoMusica": "velhainfancia.mp3"
+    },
+    {
+      "musica": "Faroeste Caboclo",
+      "autor": "Legião Urbana",
+      "letra": "\"Mas João de Santo Cristo…\"",
+      "arquivoImagemEmoji": "Emojis/faroestecaboclo.png",
+      "arquivoMusica": "faroestecaboclo.mp3"
     }
   ]
 }
