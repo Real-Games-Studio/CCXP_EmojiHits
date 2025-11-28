@@ -391,6 +391,181 @@
       "letra": "Purple rain, purple rain",
       "arquivoImagemEmoji": "Emojis/purplerain.png",
       "arquivoMusica": "purplerain.mp3"
+    },
+    {
+      "musica": "Let It Go",
+      "autor": "Frozen – Idina Menzel",
+      "letra": "Let it go, let it go!",
+      "arquivoImagemEmoji": "Emojis/letitgo.png",
+      "arquivoMusica": "letitgo.mp3"
+    },
+    {
+      "musica": "My Heart Will Go On",
+      "autor": "Titanic – Celine Dion",
+      "letra": "Near, far, wherever you are",
+      "arquivoImagemEmoji": "Emojis/myheartwillgoon.png",
+      "arquivoMusica": "myheartwillgoon.mp3"
+    },
+    {
+      "musica": "Hedwig’s Theme",
+      "autor": "Harry Potter OST",
+      "letra": "(Tema instrumental)",
+      "arquivoImagemEmoji": "Emojis/hedwigstheme.png",
+      "arquivoMusica": "hedwigstheme.mp3"
+    },
+    {
+      "musica": "Star Wars",
+      "autor": "John Williams",
+      "letra": "(Tema instrumental)",
+      "arquivoImagemEmoji": "Emojis/starwars.png",
+      "arquivoMusica": "starwars.mp3"
+    },
+    {
+      "musica": "Circle of Life",
+      "autor": "Rei Leao - Elton John",
+      "letra": "In the Circle, the circle of life",
+      "arquivoImagemEmoji": "Emojis/circleoflife.png",
+      "arquivoMusica": "circleoflife.mp3"
+    },
+    {
+      "musica": "Part of Your World",
+      "autor": "A pequena Sereia - Jodi Benson",
+      "letra": "I wanna be where the people are",
+      "arquivoImagemEmoji": "Emojis/partofyourworld.png",
+      "arquivoMusica": "partofyourworld.mp3"
+    },
+    {
+      "musica": "Running Up That Hill",
+      "autor": "Stranger Things – Kate Bush",
+      "letra": "And if I only could, I’d make a deal with God",
+      "arquivoImagemEmoji": "Emojis/runningupthathill.png",
+      "arquivoMusica": "runningupthathill.mp3"
+    },
+    {
+      "musica": "Happy Feet Dance!",
+      "autor": "Prince",
+      "letra": "Everybody get up, clap your hands and dance to the beat",
+      "arquivoImagemEmoji": "Emojis/happyfeetdance.png",
+      "arquivoMusica": "happyfeetdance.mp3"
+    },
+    {
+      "musica": "Pure Imagination",
+      "autor": "Willy Wonka",
+      "letra": "Come with me and you'll be in a world of pure imagination",
+      "arquivoImagemEmoji": "Emojis/pureimagination.png",
+      "arquivoMusica": "pureimagination.mp3"
+    },
+    {
+      "musica": "Ghostbusters",
+      "autor": "Ray Parker Jr.",
+      "letra": "Who you gonna call? Ghostbusters!",
+      "arquivoImagemEmoji": "Emojis/ghostbusters.png",
+      "arquivoMusica": "ghostbusters.mp3"
+    },
+    {
+      "musica": "Spider-Man Theme",
+      "autor": "Danny Elfman",
+      "letra": "(Tema instrumental)",
+      "arquivoImagemEmoji": "Emojis/spidermantheme.png",
+      "arquivoMusica": "spidermantheme.mp3"
+    },
+    {
+      "musica": "noivacadáver",
+      "autor": "",
+      "letra": "",
+      "arquivoImagemEmoji": "Emojis/noivacadáver.png",
+      "arquivoMusica": "noivacadáver.mp3"
+    },
+    {
+      "musica": "Somewhere Over the Rainbow",
+      "autor": "The Wizard of Oz",
+      "letra": "Somewhere Over the Rainbow",
+      "arquivoImagemEmoji": "Emojis/somewhereovertherainbow.png",
+      "arquivoMusica": "somewhereovertherainbow.mp3"
+    },
+    {
+      "musica": "Jurassic Park Theme",
+      "autor": "John Williams",
+      "letra": "(Tema instrumental)",
+      "arquivoImagemEmoji": "Emojis/jurassicparktheme.png",
+      "arquivoMusica": "jurassicparktheme.mp3"
+    },
+    {
+      "musica": "Danger Zone",
+      "autor": "Top Gun – Kenny Loggins",
+      "letra": "Highway to the danger zone",
+      "arquivoImagemEmoji": "Emojis/dangerzone.png",
+      "arquivoMusica": "dangerzone.mp3"
+    },
+    {
+      "musica": "Havana",
+      "autor": "Camila Cabello",
+      "letra": "Havana, ooh na-na",
+      "arquivoImagemEmoji": "Emojis/havana.png",
+      "arquivoMusica": "havana.mp3"
+    },
+    {
+      "musica": "Game of Thrones Theme",
+      "autor": "Ramin Djawadi",
+      "letra": "(Tema instrumental)",
+      "arquivoImagemEmoji": "Emojis/gameofthronestheme.png",
+      "arquivoMusica": "gameofthronestheme.mp3"
+    },
+    {
+      "musica": "A Whole New World",
+      "autor": "Alladin - Lea Salonga",
+      "letra": "A whole new world",
+      "arquivoImagemEmoji": "Emojis/awholenewworld.png",
+      "arquivoMusica": "awholenewworld.mp3"
+    },
+    {
+      "musica": "He’s a Pirate",
+      "autor": "Pirates of the Caribbean",
+      "letra": "(Tema instrumental)",
+      "arquivoImagemEmoji": "Emojis/hesapirate.png",
+      "arquivoMusica": "hesapirate.mp3"
+    },
+    {
+      "musica": "Kung Fu Fighting",
+      "autor": "Kung Fu Panda",
+      "letra": "Everybody was kung fu fighting",
+      "arquivoImagemEmoji": "Emojis/kungfufighting.png",
+      "arquivoMusica": "kungfufighting.mp3"
+    },
+    {
+      "musica": "Super Mario Bros",
+      "autor": "",
+      "letra": "",
+      "arquivoImagemEmoji": "Emojis/supermariobros.png",
+      "arquivoMusica": "supermariobros.mp3"
+    },
+    {
+      "musica": "Zelda",
+      "autor": "",
+      "letra": "",
+      "arquivoImagemEmoji": "Emojis/zelda.png",
+      "arquivoMusica": "zelda.mp3"
+    },
+    {
+      "musica": "Dragon Ball Z",
+      "autor": "",
+      "letra": "",
+      "arquivoImagemEmoji": "Emojis/dragonballz.png",
+      "arquivoMusica": "dragonballz.mp3"
+    },
+    {
+      "musica": "Crepusculo",
+      "autor": "",
+      "letra": "",
+      "arquivoImagemEmoji": "Emojis/crepusculo.png",
+      "arquivoMusica": "crepusculo.mp3"
+    },
+    {
+      "musica": "\"Remains of the Day\"",
+      "autor": "Noiva Cadáver – Danny Elfman",
+      "letra": "Boy, you’re in for a doozy…",
+      "arquivoImagemEmoji": "Emojis/“remainsoftheday”.png",
+      "arquivoMusica": "“remainsoftheday”.mp3"
     }
   ]
 }

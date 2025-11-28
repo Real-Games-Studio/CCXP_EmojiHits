@@ -246,6 +246,8 @@ public class MusicController : MonoBehaviour
             }
 
             catalog.Add(data);
+
+            yield return new WaitForEndOfFrame();
         }
 
 

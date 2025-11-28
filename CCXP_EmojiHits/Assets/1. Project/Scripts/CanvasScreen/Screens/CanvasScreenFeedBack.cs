@@ -99,7 +99,7 @@ public class CanvasScreenFeedBack : CanvasScreen
             Debug.LogWarning("[CanvasScreenFeedBack] Clip de audio nao carregado para a musica atual.");
             return;
         }
-
+        Debug.Log($"[CanvasScreenFeedBack] Tocando musica de feedback: " + currentMusicData.musicName);
         audioSource.clip = currentMusicData.musicClip;
         audioSource.Play();
     }
