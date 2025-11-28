@@ -67,6 +67,9 @@ public class MusicController : MonoBehaviour
     private int currentIndex = -1;
     private bool isDatabaseLoaded;
     private Coroutine databaseCoroutine;
+    private Coroutine musicLoadCoroutine;
+    private readonly Dictionary<string, Sprite> emojiCache = new();
+    private readonly Dictionary<string, AudioClip> audioCache = new();
     private int lastRandomIndex = -1;
 
     private void Awake()
@@ -120,9 +123,8 @@ public class MusicController : MonoBehaviour
             return false;
         }
 
-        currentIndex = (currentIndex + 1) % catalog.Count;
-        currentMusic = catalog[currentIndex];
-        OnMusicChanged?.Invoke(currentMusic);
+        int nextIndex = (currentIndex + 1) % catalog.Count;
+        StartMusicLoad(nextIndex);
         return true;
     }
 
@@ -135,6 +137,7 @@ public class MusicController : MonoBehaviour
 
         if (catalog.Count == 1)
         {
+            StartMusicLoad(0);
             return catalog[0];
         }
 
@@ -146,6 +149,7 @@ public class MusicController : MonoBehaviour
         while (randomIndex == lastRandomIndex);
 
         lastRandomIndex = randomIndex;
+        StartMusicLoad(randomIndex);
         Debug.Log($"[MusicController] Musica aleatoria selecionada: {catalog[randomIndex].musicName}.");
         return catalog[randomIndex];
     }
@@ -231,22 +235,7 @@ public class MusicController : MonoBehaviour
                 emojiFileName = emojiFile
             };
 
-            yield return LoadEmojiForData(data);
-            if (!data.HasEmoji)
-            {
-                Debug.LogWarning($"[MusicController] Emoji '{emojiFile}' nao encontrado para '{name}'. Musica ignorada.");
-                continue;
-            }
-
-            yield return LoadAudioForData(data);
-            if (!data.HasClip)
-            {
-                Debug.LogWarning($"[MusicController] Audio '{audioFile}' nao encontrado para '{name}'. Musica ignorada.");
-                continue;
-            }
-
             catalog.Add(data);
-
             yield return new WaitForEndOfFrame();
         }
 
@@ -277,13 +266,86 @@ public class MusicController : MonoBehaviour
         return combined.Replace("\\", "/");
     }
 
+    private void StartMusicLoad(int targetIndex)
+    {
+        if (targetIndex < 0 || targetIndex >= catalog.Count)
+        {
+            return;
+        }
+
+        if (musicLoadCoroutine != null)
+        {
+            StopCoroutine(musicLoadCoroutine);
+        }
+
+        musicLoadCoroutine = StartCoroutine(PrepareAndApplyMusic(targetIndex));
+    }
+
+    private IEnumerator PrepareAndApplyMusic(int index)
+    {
+        if (index < 0 || index >= catalog.Count)
+        {
+            musicLoadCoroutine = null;
+            yield break;
+        }
+
+        MusicData data = catalog[index];
+        yield return EnsureMusicAssets(data);
+
+        if (!data.HasEmoji || !data.HasClip)
+        {
+            Debug.LogWarning($"[MusicController] Musica '{data.musicName}' ignorada devido a recursos faltantes.");
+            musicLoadCoroutine = null;
+            yield break;
+        }
+
+        currentIndex = index;
+        currentMusic = data;
+        OnMusicChanged?.Invoke(currentMusic);
+        musicLoadCoroutine = null;
+    }
+
+    private IEnumerator EnsureMusicAssets(MusicData data)
+    {
+        if (data == null)
+        {
+            yield break;
+        }
+
+        if (!data.HasEmoji)
+        {
+            yield return LoadEmojiForData(data);
+        }
+
+        if (!data.HasClip)
+        {
+            yield return LoadAudioForData(data);
+        }
+    }
+
     private IEnumerator LoadEmojiForData(MusicData data)
     {
+        if (data == null || string.IsNullOrEmpty(data.emojiFileName))
+        {
+            yield break;
+        }
+
+        if (emojiCache.TryGetValue(data.emojiFileName, out Sprite cached) && cached != null)
+        {
+            data.musicEmoji = cached;
+            yield break;
+        }
+
         bool isDone = false;
 
         var loader = new FileLoader(data.emojiFileName);
         loader.LoadSprite(sprite =>
         {
+            if (sprite != null)
+            {
+                emojiCache[data.emojiFileName] = sprite;
+            }
+
             data.musicEmoji = sprite;
             isDone = true;
         });
@@ -296,11 +358,27 @@ public class MusicController : MonoBehaviour
 
     private IEnumerator LoadAudioForData(MusicData data)
     {
+        if (data == null || string.IsNullOrEmpty(data.audioFileName))
+        {
+            yield break;
+        }
+
+        if (audioCache.TryGetValue(data.audioFileName, out AudioClip cached) && cached != null)
+        {
+            data.musicClip = cached;
+            yield break;
+        }
+
         bool isDone = false;
 
         var loader = new FileLoader(data.audioFileName);
         loader.LoadAudioClip(clip =>
         {
+            if (clip != null)
+            {
+                audioCache[data.audioFileName] = clip;
+            }
+
             data.musicClip = clip;
             isDone = true;
         });
